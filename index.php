@@ -9,6 +9,13 @@
     $query = "SELECT * FROM tbl_user";
     $read = $db->select($query);
 ?>
+<!-- Message -->
+<?php 
+    if(isset($_GET['msg'])){
+        echo "<span style='color:green'>".$_GET['msg']."</span>";
+    }
+?>
+
 <!-- table starts here -->
 <table class="tblone">
     <tr>
@@ -34,5 +41,7 @@
     <?php } ?>
 </table>
 <!-- table ends here -->
+<br>
+<a href="create.php">Create</a>
 
 <?php include 'inc/footer.php'; ?>
