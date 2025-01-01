@@ -23,6 +23,14 @@
     }
 ?>
 
+<!-- delete query -->
+<?php 
+if(isset($_POST['delete'])){
+    $query = "DELETE FROM tbl_user WHERE id = $id";
+    $deleteData = $db->delete($query);
+}
+?>
+
 <!-- Message -->
 <?php 
     if(isset($error)){
@@ -47,8 +55,9 @@
     </tr>
     <tr>
         <td>
-            <input type="submit" name="submit" value="Submit">
+            <input type="submit" name="submit" value="Update">
             <input type="reset" value="Cancel">
+            <input onclick="return confirm('Are you sure you want to delete this item?');" type="submit" name="delete" value="Delete">
         </td>
     </tr>
     

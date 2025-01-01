@@ -19,14 +19,19 @@
 <!-- table starts here -->
 <table class="tblone">
     <tr>
+        <th width="10%">SL NO.</th>
         <th width="35%">Name</th>
         <th width="25%">Email</th>
-        <th width="30%">Skill</th>
+        <th width="20%">Skill</th>
         <th width="10%">Action</th>
     </tr>
     <?php if($read) { ?>
-    <?php while($row = $read->fetch_assoc()) { ?>
+    <?php
+    $i = 1;
+    while($row = $read->fetch_assoc()) { 
+    ?>
     <tr>
+        <td><?php echo $i++; ?></td>
         <td><?php echo $row['name']; ?></td>
         <td style="text-decoration:underline"><?php echo $row['email']; ?></td>
         <td><?php echo $row['skill']; ?></td>
